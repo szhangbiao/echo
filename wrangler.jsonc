@@ -12,9 +12,15 @@
 	},
 	"triggers": {
 		"crons": [
-			"* * * * *"
+			"0 0 * * *"
 		]
 	},
+	"kv_namespaces": [
+		{
+			"binding": "API_MONITOR_KV",
+			"id": "e6af4e66b070444f8eac2d390fa52473"
+		}
+	],
 	"upload_source_maps": true,
 	"compatibility_flags": [
 		"nodejs_compat"
