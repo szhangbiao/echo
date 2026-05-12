@@ -4,21 +4,21 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "echo",
+	"name": "dry-mountain-3161",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-05-12",
-	"compatibility_flags": [
-		"nodejs_compat",
-		"global_fetch_strictly_public"
-	],
-	"assets": {
-		// The path to the directory containing the `index.html` file to be served at `/`
-		"directory": "./public"
-	},
 	"observability": {
 		"enabled": true
 	},
-	"upload_source_maps": true
+	"triggers": {
+		"crons": [
+			"* * * * *"
+		]
+	},
+	"upload_source_maps": true,
+	"compatibility_flags": [
+		"nodejs_compat"
+	]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
@@ -37,6 +37,11 @@
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
 	 */
 	// "vars": {  "MY_VARIABLE": "production_value" }
+	/**
+	 * Static Assets
+	 * https://developers.cloudflare.com/workers/static-assets/binding/
+	 */
+	// "assets": {  "directory": "./public/",  "binding": "ASSETS" }
 	/**
 	 * Service Bindings (communicate between multiple Workers)
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
