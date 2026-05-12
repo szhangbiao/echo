@@ -22,7 +22,7 @@ export async function performChecks(env: Env): Promise<HistoryEntry> {
 					ok: resp.ok,
 					responseTime: Date.now() - start,
 				};
-			} catch (err) {
+			} catch (err: any) {
 				clearTimeout(timeoutId);
 				return {
 					name: api.name,
@@ -30,6 +30,7 @@ export async function performChecks(env: Env): Promise<HistoryEntry> {
 					status: 0,
 					ok: false,
 					responseTime: Date.now() - start,
+					error: err.message || String(err),
 				};
 			}
 		})

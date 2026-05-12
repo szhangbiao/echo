@@ -4,6 +4,7 @@ export interface MonitorResult {
 	status: number;
 	ok: boolean;
 	responseTime: number;
+	error?: string;
 }
 
 export interface HistoryEntry {

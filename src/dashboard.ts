@@ -228,6 +228,7 @@ export function getDashboardHTML(): string {
                             <div class="metric-value">\${r.responseTime}ms</div>
                         </div>
                     </div>
+                    \${r.error ? \`<div style="margin-top: 1rem; color: var(--error); font-size: 0.75rem; background: #fee2e2; padding: 0.5rem; border-radius: 4px; border: 1px solid #fecaca;">\${r.error}</div>\` : ''}
                 </div>
             \`).join('');
 
